@@ -22,11 +22,11 @@ class AreasController < ApplicationController
     @area = @w * @h
   end
 
-  def trap
+  def trapezoid
     @a = params[:length_of_side].to_f
-    @c = params[:length_of_side].to_f
+    @w = params[:horizontal_width].to_f
     @h = params[:vertical_height].to_f
-    @area = (1/2 * (@a + @c)) * @h
+    @area = 0.5 * (@a + @w) * @h
   end
 
   def ellipse
@@ -37,6 +37,8 @@ class AreasController < ApplicationController
   end
 
   def random
-    @radii = [rand(1..20), rand(1..20), rand(1..20), rand(1..20), rand(1..20)]
+    @pi = 3.1416
+    @radii = [rand(1..5), rand(5..10), rand(10..15), rand(15..20), rand(20..25)].to_f
+    @area = @pi * @radii
   end
 end
