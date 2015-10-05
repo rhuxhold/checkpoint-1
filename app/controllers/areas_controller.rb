@@ -38,7 +38,7 @@ class AreasController < ApplicationController
 
   def random
     @pi = 3.1416
-    @radii = [rand(1..5), rand(5..10), rand(10..15), rand(15..20), rand(20..25)].to_f
-    @area = @pi * @radii
+    @radii = [rand(1..20), rand(5..10), rand(10..15), rand(15..20), rand(20..25)]
+    @area = @pi * @radii[0]
   end
 end
